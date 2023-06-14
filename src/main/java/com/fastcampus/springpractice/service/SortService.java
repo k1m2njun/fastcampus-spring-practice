@@ -1,15 +1,17 @@
-package com.fastcampus.javaoop.service;
+package com.fastcampus.springpractice.service;
 
-import com.fastcampus.javaoop.logic.JavaSort;
-import com.fastcampus.javaoop.logic.Sort;
+import com.fastcampus.springpractice.logic.Sort;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class SortService {
 
     private final Sort<String> sort; // DI, 생성자를 통해 주입받아 new가 필요없어짐.
 
-    public SortService(Sort<String> sort) {
+    public SortService(@Qualifier("bubbleSort") Sort<String> sort) {
         this.sort = sort;
         System.out.println("구현체 : " + sort.getClass().getName());
     }

@@ -1,9 +1,12 @@
-package com.fastcampus.javaoop.logic;
+package com.fastcampus.springpractice.logic;
+
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@Component // 빈으로 인식 함.
 public class JavaSort <T extends Comparable<T>> implements Sort<T>{
 
     @Override
